@@ -5,28 +5,36 @@ setup = function() {
 //Background Images
 var caveSceneImage = loadImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX3nbjayB3ltM5Sq5GEHIwA-ql3hedYsmGAQ&s");
 
-var forestImage = loadImage("https://t3.ftcdn.net/jpg/02/50/39/72/360_F_250397206_HuBj2V5oEytcqonzpzum4IjEjtAsZq3g.jpg");
+var Geonosis = loadImage("https://lumiere-a.akamaihd.net/v1/images/geonosis-history-3-retina_32c43377.jpeg?region=0%2C0%2C1200%2C512");
+
+var Savareen = loadImage("https://britishfilmdesigners.com/wp-content/uploads/2025/01/THE-MAIN-STRUCTURE-FOR-SAVAREEN-BY-JOHN-WILSON-1024x535.png");
+
 
 //Variable Declarations
 var sceneImage = caveSceneImage;
-var sceneText = "Which planet do you want to go to?   [Press f for Geonosis, c for Christophsis, s for Savareen, t for Tatooine, a for akiva, and r for rodia]"
+var sceneText = "Which planet do you want to go to? \n [Press f for Geonosis, c for Christophsis, s for Savareen, t for Tatooine, a for akiva, and r for rodia]"
 
  ;
 
 draw = function(){
-    
+   
    drawScene();
 
 
    if(keyPressed){
      if(key == 'f'){
-       sceneImage = forestImage;   
-       sceneText = "No fox here.  [Press s to restart]";
+       sceneImage = Geonosis;   
+       sceneText = "You found them!";
      } 
      if(key == 's'){
+      sceneImage = Savareen;
+      sceneText = "No Jedi here [Press z to restart] ";
+     }
+   if(key == 'z'){
       sceneImage = caveSceneImage;
-      sceneText = "Where do you want to go?  [Press f for forest and c for cave]";
-    } 
+      sceneText = "Which planet do you want to go to?   [Press f for Geonosis, c for Christophsis, s for Savareen, t for Tatooine, a for akiva, and r for rodia]";
+   
+   }  
    }
   
 };
@@ -38,7 +46,7 @@ var drawScene = function(){
     rect(0, 350, 600, 100);
       
     fill(255,255,255);
-    textSize(20);
+    textSize(13);
    
     text(sceneText, 10, 375);
 };
