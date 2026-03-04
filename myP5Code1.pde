@@ -11,9 +11,11 @@ var Savareen = loadImage("https://britishfilmdesigners.com/wp-content/uploads/20
 
 var Tatooine = loadImage("https://static0.gamerantimages.com/wordpress/wp-content/uploads/2022/05/tatooine-star-wars-Cropped.jpg?w=1200&h=628&fit=crop");
 
-var Christophsis = loadImage("https://static.wikia.nocookie.net/starwars/images/f/f5/Christophsis_landscape.png/revision/latest?cb=20120929022612")
+var Christophsis = loadImage("https://static.wikia.nocookie.net/starwars/images/f/f5/Christophsis_landscape.png/revision/latest?cb=20120929022612");
 
+var akiva = loadImage("https://preview.redd.it/akiva-star-wars-outlaws-v0-mgtc9ccf3fld1.jpeg?width=1080&crop=smart&auto=webp&s=130e3d0f8e8aa487927bffde6e8e6f59966b5697");
 
+var rodia = loadImage("https://lumiere-a.akamaihd.net/v1/images/databank_rodia_01_169_6f76b79d.jpeg?region=0%2C49%2C1560%2C780");
 
 //Variable Declarations
 var sceneImage = caveSceneImage;
@@ -52,6 +54,16 @@ draw = function(){
         sceneText = "No Jedi here [Press z to restart] " } 
    }
   
+if(key == 'a'){
+      sceneImage = akiva;
+        sceneText = "No Jedi here [Press z to restart] " } 
+
+if(key == 'r'){
+      sceneImage = rodia;
+        sceneText = "No Jedi here [Press z to restart] " } 
+
+
+
 };
 
 var drawScene = function(){
@@ -64,7 +76,8 @@ var drawScene = function(){
     textSize(18);
    
     text(sceneText, 10, 455);
+
+ 
+
 };
-
-
 
