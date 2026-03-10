@@ -17,9 +17,13 @@ var akiva = loadImage("https://preview.redd.it/akiva-star-wars-outlaws-v0-mgtc9c
 
 var rodia = loadImage("https://lumiere-a.akamaihd.net/v1/images/databank_rodia_01_169_6f76b79d.jpeg?region=0%2C49%2C1560%2C780");
 
+var Darth = loadImage("https://static0.polygonimages.com/wordpress/wp-content/uploads/chorus/uploads/chorus_asset/file/16223543/VaderImmortal_Episode1_Vader1.jpg?w=1600&h=900&fit=crop");
+
+var White = loadImage ("https://fabricmail.com/cdn/shop/products/white_1024x1024.jpg?v=1588263700")
+
 //Variable Declarations
 var sceneImage = caveSceneImage;
-var sceneText = "Which planet do you want to go to? \n [Press f for Geonosis, c for Christophsis, s for Savareen, t for Tatooine, a for akiva, and r for rodia]"
+var sceneText = "Which planet do you want to go to? Try to find the Jedi. \n [Press f for Geonosis, c for Christophsis, s for Savareen, t for Tatooine, a for akiva, and r for rodia]"
 
  ;
 
@@ -63,6 +67,15 @@ if(key == 'r'){
         sceneText = "No Jedi here [Press z to restart] " } 
 
 
+if(mousePressed){sceneImage =Darth;
+
+sceneText = "press z fast!!"}
+
+
+
+  //random(sceneText= "Did you know that StarWars was heavily influenced by a movie The hidden fortress");
+    
+
 
 };
 
@@ -74,6 +87,8 @@ var drawScene = function(){
       
     fill(255,255,255);
     textSize(18);
+
+    if(mousePressed){fill(random(255),random(255),random(255))}
    
     text(sceneText, 10, 455);
 
